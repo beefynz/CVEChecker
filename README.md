@@ -12,4 +12,6 @@ Two files required:
 KEV&EPSS.py - This is the pure Python code that can be run in any IDE that has Python installed. This uses CLI<br>
 app.py - This code is the same as KEV&EPSS.py but has been modified to be used with streamlit for a web UI.<br>
 
-Uses Open Soruce API endpoints to pull informaiton into a Streamlit web UI
+===================================================<br>
+Instructions for installing streamlit to use Web UI<br>
+===================================================<br>
