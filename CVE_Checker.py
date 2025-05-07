@@ -146,29 +146,36 @@ def main():
  █████    ████   ███████    █████ ██   ██ ███████  ██████ ██   ██ ███████ ██   ██ 
 '''
     print(ascii_title)
-    print("CVE Checker CLI - KEV, NVD, EPSS\n")
+    print("CVE Checker CLI - KEV, NVD, EPSS")
+    print("Type 'exit' or 'q' to quit.\n")
 
-    cve_id = input("Enter a CVE ID (e.g., CVE-2021-44228): ").strip().upper()
-    if not cve_id:
-        print("❌ Please enter a valid CVE ID.")
-        return
+    while True:
+        cve_id = input("Enter a CVE ID (e.g., CVE-2021-44228): ").strip().upper()
+        if cve_id in {"EXIT", "Q"}:
+            print("Exiting CVE Checker. Goodbye!")
+            break
+        if not cve_id.startswith("CVE-"):
+            print("❌ Please enter a valid CVE ID (e.g., CVE-2021-44228).")
+            continue
 
-    data = check_cve(cve_id)
-    if not any([data["kev"], data["nvd"], data["epss"]]):
-        print("❌ No data found for this CVE in KEV, NVD, or EPSS.")
-        return
+        data = check_cve(cve_id)
+        if not any([data["kev"], data["nvd"], data["epss"]]):
+            print("❌ No data found for this CVE in KEV, NVD, or EPSS.\n")
+            continue
 
-    print("\n📊 Summary Metrics:")
-    cvss_score = data["nvd"]["cvss_score"] if data["nvd"] else None
-    epss_score = data["epss"]["score"] if data["epss"] else None
-    epss_percent = f"{epss_score * 100:.2f}%" if epss_score is not None else "N/A"
-    severity = assess_combined_severity(cvss_score, epss_score)
-    print(f"- CVSS Score: {cvss_score}")
-    print(f"- EPSS Score (next 30 days): {epss_percent}")
-    print(f"- Combined Severity: {severity}")
+        print("\n📊 Summary Metrics:")
+        cvss_score = data["nvd"]["cvss_score"] if data["nvd"] else None
+        epss_score = data["epss"]["score"] if data["epss"] else None
+        epss_percent = f"{epss_score * 100:.2f}%" if epss_score is not None else "N/A"
+        severity = assess_combined_severity(cvss_score, epss_score)
+        print(f"- CVSS Score: {cvss_score}")
+        print(f"- EPSS Score (next 30 days): {epss_percent}")
+        print(f"- Combined Severity: {severity}")
 
-    print("\n📦 Full Details (JSON):")
-    print(json.dumps(data, indent=2))
+        print("\n📦 Full Details (JSON):")
+        print(json.dumps(data, indent=2))
+        print("\n"  "\n")
+
 
 if __name__ == "__main__":
     main()
