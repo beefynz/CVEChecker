@@ -1,22 +1,40 @@
-# CVE Security Vulnerability Checker 0.2
+# CVE Security Vulnerability Checker 0.3
 
-============<br>
+===========<br>
 Description<br>
-============<br>
-Quick and easy tool to query CVE data and pull informtion from the below sources. Enter a CVE ID to check details across mulitple vulnerability databases. The aim is to only use open source endpoints to pull information that is completely free and not requiring API keys. <br>
+===========<br><br>
+This Streamlit-based web app allows users to query and visualize security vulnerability data for any given CVE ID (e.g., CVE-2021-44228). It pulls real-time information from three major public cybersecurity data sources:
+<br><br>
+===============<br>
+📡 Data Sources<br>
+===============<br><br>
+🛡️ KEV (Known Exploited Vulnerabilities) – From CISA's official KEV catalog.<br>
 
-Current sources below: (Will work to look at adding more sources to enrich CVE data)
+🗂️ NVD (National Vulnerability Database) – Provides CVSS scores, vectors, descriptions, CPEs, CWEs, and references.<br>
 
-* CISA Known Exploited Vulnerabilities (KEV) - KEV list are vulnerabilites that are known to be exploited in the wild<br>
-* National Vulnerability Databses (NVD) - NVD is a another list of all vulnerabilities and has additional information including CVSS<br>
-* Exploit Prediction Scoring System (EPSS) - provides a score for likelihood of an vulnerability being exploited in the wild
+📊 EPSS (Exploit Prediction Scoring System) – Indicates the probability of a vulnerability being exploited in the next 30 days.<br>
+<br><br>
+Two main files:<br>
 
-Two main files:
-
-KEV&EPSS.py - This is the pure Python code that can be run in any IDE that has Python installed. This uses CLI<br>
-app.py - This code is the same as KEV&EPSS.py but has been modified to be used with streamlit for a web UI.<br>
+CVE_checker.py - This is the pure Python code that can be run in any IDE or windows command line that has Python installed. This is CLI version<br>
+app.py - This code is the same as CVE_Checker.py but has been modified to be used with streamlit for a web UI.<br><br>
 
 ===================================================<br>
 Instructions for installing streamlit to use Web UI<br>
-===================================================<br>
-work in progress
+===================================================<br><br>
+✅ 1. Set up your environment<br>
+Create a virtual environment (optional but recommended):<br>
+<br><br>
+python -m venv venv<br>
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+<br><br>
+✅ 2. Install dependencies<br>
+At a minimum, you need:<br>
+<br><br>
+pip install streamlit requests
+<br><br>
+✅ 3. Run Application<br>
+to run application:<br>
+<br>
+streamlit run app.py  (be in the directory that app.py file is in)
+
