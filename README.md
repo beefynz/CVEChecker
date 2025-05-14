@@ -42,8 +42,7 @@ streamlit run app.py  (be in the directory that app.py file is in)<br><br>
 =================<br>
 new in Version 0.4<br>
 =================<br>
-updated CVE_Checker.py<br>
-last code update had bug causing it to break at runtime now fixed<br>
+updated app.py<br>
 bulk upload function added, users can upload txt file with CVEs to get data + download CSV file<br>
 CVEs retrieved via bulk upload are prioritize based on a calculation based on CVSS, EPSS, Severty + Kev List<br><br>
 
