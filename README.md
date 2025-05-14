@@ -16,7 +16,7 @@ This Streamlit-based web app allows users to query and visualize security vulner
 <br><br>
 Two main files:<br>
 
-CVE_checker.py - This is the pure Python code that can be run in any IDE or windows command line that has Python installed. This is CLI version<br>
+CVE_checker.py - This is the python code that can be run in any IDE or windows command line that has Python installed. This is CLI version<br>
 app.py - This code is the same as CVE_Checker.py but has been modified to be used with streamlit for a web UI.<br><br>
 
 ===================================================<br>
