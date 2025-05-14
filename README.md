@@ -44,6 +44,6 @@ new in Version 0.4<br>
 =================<br><br>
 
 last code update had bug causing it to break at runtime now fixed<br>
-bulk upload function added, users can upload txt file with CVEs to get data + download CSV file<br
+bulk upload function added, users can upload txt file with CVEs to get data + download CSV file<br>
 CVEs retrieved via bulk upload are prioritize based on a calculation based on CVSS, EPSS, Severty + Kev List<br><br>
 
