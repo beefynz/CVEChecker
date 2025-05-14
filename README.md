@@ -1,4 +1,4 @@
-# CVE Security Vulnerability Checker 0.3
+# CVE Security Vulnerability Checker 0.4
 
 ===========<br>
 Description<br>
@@ -37,4 +37,13 @@ pip install streamlit requests
 to run application:<br>
 <br>
 streamlit run app.py  (be in the directory that app.py file is in)
+
+
+=================
+new in Version 0.4
+=================
+
+last code update had bug causing it to break at runtime now fixed
+bulk upload function added, users can upload txt file with CVEs to get data + download CSV file
+CVEs retrieved via bulk upload are prioritize based on a calculation based on CVSS, EPSS, Severty + Kev List
 
