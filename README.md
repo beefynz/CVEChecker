@@ -36,14 +36,14 @@ pip install streamlit requests
 ✅ 3. Run Application<br>
 to run application:<br>
 <br>
-streamlit run app.py  (be in the directory that app.py file is in)
+streamlit run app.py  (be in the directory that app.py file is in)<br><br>
 
 
-=================
-new in Version 0.4
-=================
+=================<br>
+new in Version 0.4<br>
+=================<br><br>
 
-last code update had bug causing it to break at runtime now fixed
-bulk upload function added, users can upload txt file with CVEs to get data + download CSV file
-CVEs retrieved via bulk upload are prioritize based on a calculation based on CVSS, EPSS, Severty + Kev List
+last code update had bug causing it to break at runtime now fixed<br>
+bulk upload function added, users can upload txt file with CVEs to get data + download CSV file<br
+CVEs retrieved via bulk upload are prioritize based on a calculation based on CVSS, EPSS, Severty + Kev List<br><br>
 
